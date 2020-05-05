@@ -41,6 +41,8 @@ const initialState = {
 }
 
 
+
+
 class App extends Component {
   constructor() {
     super();
@@ -93,11 +95,11 @@ class App extends Component {
           .then(response => response.json())
           .then(response => {
         if (response) {
-          fetch('https://calm-shelf-59466.herokuapp.com/imageurl', {
+          fetch('https://calm-shelf-59466.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              input: this.state.user.id
+              id: this.state.user.id
             })
           })
             .then(response => response.json())
